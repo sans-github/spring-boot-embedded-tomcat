@@ -1,0 +1,5 @@
+  spring-boot-embedded-tomcat:
+    container_name: spring-boot-embedded-tomcat
+    image: com-san/spring-boot-embedded-tomcat:latest
+    ports:
+      - 38080:38080
