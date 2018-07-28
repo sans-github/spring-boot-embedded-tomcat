@@ -26,16 +26,11 @@ curl -sk http://localhost:38080/internal/health | python -m json.tool
 ```
 
 # API
-## Request #1
-    curl -sk http://localhost:38080/hello -H "Content-Type: application/json"
-    hello there
-    
-
-## Request #2
+## Request
 ```code
-curl -sk http://localhost:38080/samplepost -H "Content-Type: application/json" -X POST -d "{\"greeting\": \"Hello\", \"name\": \"Cowie\"}" | python -m json.tool
+curl -sk http://localhost:38080/request -H "Content-Type: application/json" -X POST -d "{\"greeting\": \"Hello\", \"name\": \"Cowie\"}" | python -m json.tool
 {
-   "sampleRequest": {
+   "request": {
        "greeting": "Hello",
        "name": "Cowie"
    },

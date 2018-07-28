@@ -1,8 +1,8 @@
 package com.spring.boot.model;
 
-public class SampleRequest {
-    String name;
-    String greeting;
+public class Request {
+    private String name;
+    private String greeting;
 
     public String getName() {
         return name;
