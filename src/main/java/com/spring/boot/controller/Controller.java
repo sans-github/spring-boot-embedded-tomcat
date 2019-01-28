@@ -6,9 +6,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 
@@ -28,6 +30,11 @@ public class Controller {
 
         logger.info("Dispatching response. name={}, time={}", response.getRequest().getName(), response.getTime());
         return response;
+    }
+
+    @RequestMapping(value = "/abcd", method = GET)
+    public void request(@RequestParam("firstParam") final String firstParam, @RequestParam("secondParam") final Integer secondParam) {
+        logger.info("FirstParam={}, SecondParam={}", firstParam, secondParam);
     }
 
     private Response generateResponse(final Request request) {

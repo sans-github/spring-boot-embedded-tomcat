@@ -2,5 +2,6 @@
 <configuration>
     <include resource="org/springframework/boot/logging/logback/base.xml"/>
     <logger name="org.springframework" level="ERROR"/>
+    <logger name="logging.level.org.apache.coyote.http11.Http11InputBuffer" level="DEBUG"/>
     <logger name="com.spring.boot.controller" level="INFO"/>
 </configuration>

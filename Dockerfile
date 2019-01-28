@@ -1,4 +1,4 @@
-FROM frolvlad/alpine-oraclejdk8:slim
+FROM openjdk:8-jre
 
 ENV SERVER_PORT 38080
 EXPOSE $SERVER_PORT

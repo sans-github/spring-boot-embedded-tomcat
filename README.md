@@ -1,17 +1,17 @@
 # Building app
-    mvn clean install
-    Reference - https://github.com/spotify/dockerfile-maven
+mvn clean install
+Reference - https://github.com/spotify/dockerfile-maven
 
-# Running the app
-   ## run jar 
+## Running the app
+### As a jar
     java -jar target/spring-boot-embedded-tomcat-0.0.1-SNAPSHOT.jar
-   
-   ## run in docker
-    docker run --name spring-boot-embedded-tomcat -it -d --rm -p=38080:38080 com-san/spring-boot-embedded-tomcat:0.0.1-SNAPSHOT  
-    or 
+
+## Inside docker
+    docker run --name spring-boot-embedded-tomcat -it -d --rm -p=38080:38080 com-san/spring-boot-embedded-tomcat:0.0.1-SNAPSHOT
+    or
     docker-compose -f 'docker-compose.yml' up -d
 
-# Health check via actuator end-point
+## Health check via actuator end-point
 ```code
 curl -sk http://localhost:38080/internal/health | python -m json.tool
 {
@@ -25,8 +25,8 @@ curl -sk http://localhost:38080/internal/health | python -m json.tool
 }
 ```
 
-# API
-## Request
+## API
+### `POST` sample
 ```code
 curl -sk http://localhost:38080/request -H "Content-Type: application/json" -X POST -d "{\"greeting\": \"Hello\", \"name\": \"Cowie\"}" | python -m json.tool
 {
